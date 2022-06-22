@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 try:
+    # noinspection PyUnresolvedReferences
     import amazing_marvin
 except ModuleNotFoundError:
     import os
@@ -7,6 +8,7 @@ except ModuleNotFoundError:
 
     sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
+    # noinspection PyUnresolvedReferences
     import amazing_marvin
 
 print(f"Type \"help({amazing_marvin.__name__})\" to learn about this package.")
