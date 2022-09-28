@@ -4,19 +4,22 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "amazing_marvin"
-version = "0.0.4"
+version = "0.1.0"
 authors = [
-    { name="Uwe Stuehler", email="ustuehler@bsdx.de" },
+    { name="Uwe Stuehler", email="uwe@bsdx.de" },
 ]
-description = "An API client for Amazing Marvin"
+description = "A limited and experimental API client for Amazing Marvin"
 readme = "README.md"
 requires-python = ">=3.9"
 classifiers = [
     "Programming Language :: Python :: 3",
-    #"License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
+    "License :: OSI Approved :: MIT License",
 ]
 
 [project.urls]
 "Homepage" = "https://github.com/ustuehler/py-amazing-marvin"
 "Bug Tracker" = "https://github.com/ustuehler/py-amazing-marvin/issues"
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
