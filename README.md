@@ -1,37 +1,46 @@
 # py-amazing-marvin
-An experimental Python 3 package providing an API client for [Amazing Marvin](https://amazingmarvin.com/).
 
-## Dependencies
+A Python 3 package providing a _very_ limited and experimental API client for [Amazing Marvin](https://amazingmarvin.com/).
 
-### Development
+## Features
 
-- [Python 3](https://docs.python.org/3/)
+- Retrieve some information about your account (`AmazingMarvinAPI.me`)
+- Get tasks and projects scheduled for today (`AmazingMarvinAPI.today_items`)
 
-Optionally:
+## Installation with pip
 
-- [direnv](https://direnv.net/)
+```
+pip install git+https://github.com/ustuehler/py-amazing-marvin
+```
 
-### Runtime
+## Usage
 
-- [Python 3](https://docs.python.org/3/)
-- [Active subscription](https://app.amazingmarvin.com/signup) and [API token](https://app.amazingmarvin.com/pre?api) for Amazing Marvin
+To use this package, you must have an [active subscription](https://app.amazingmarvin.com/signup) and [API token](https://app.amazingmarvin.com/pre?api) for Amazing Marvin.
 
-## Roadmap
+Example:
 
-- Basic API client with authentication and all documented endpoints
-- Experimental API client extending the basic API client to support
-  additional, high-level use cases
-- Additional, high-level use cases
-  - Marvin usage health data
-    - Estimation coverage: number of tasks estimated vs. non-estimated
-    - Estimation accuracy: over-/underestimation for all estimated and tracked
-      tasks
-    - Overall habit grade: an overall grade over all defined habits
-    - Overall goal completion
-    - ... and similar
+```python
+import os
+from amazing_marvin import AmazingMarvinAPI
+
+# Get your API token from somewhere
+api_token = os.environ['AMAZING_MARVIN_API_TOKEN']
+
+# Create an instance of the experimental API client
+client = AmazingMarvinAPI(api_token)
+
+# Retrieve some information about your account
+client.me()
+
+# Get tasks and projects scheduled for today
+client.today_items()
+```
+
+## Contributing
+
+See the [Contributing Guide](CONTRIBUTING.md) for instructions on how to set up
+a local environment for development and testing.
 
 ## License
 
-[//]: # (TODO: select a license, audit, and publish the package on PyPi)
-
-[Copyright &copy; 2022 Uwe Stuehler (UNLICENSED)](LICENSE)
+[MIT](LICENSE)
