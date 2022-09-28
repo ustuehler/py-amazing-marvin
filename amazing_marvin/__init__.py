@@ -1,4 +1,4 @@
-"""Basic API client for Amazing Marvin."""
+"""Experimental API client for Amazing Marvin."""
 
 import json
 from datetime import date, datetime
@@ -7,8 +7,8 @@ API_URL = 'https://serv.amazingmarvin.com/api'
 
 
 class AmazingMarvinAPI:
-    """Basic API client for Amazing Marvin implementing methods for at least a
-    subset of the endpoints mentioned in the `wiki
+    """Experimental API client for Amazing Marvin implementing methods for at
+    least a subset of the endpoints mentioned in the `wiki
     <https://github.com/amazingmarvin/MarvinAPI/wiki/Marvin-API>`_.
     """
 
