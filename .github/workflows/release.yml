@@ -1,0 +1,27 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        with:
+          release-type: python
+          changelog-types: |
+            [
+              {"type":"feat","section":"Features","hidden":false},
+              {"type":"fix","section":"Bug Fixes","hidden":false},
+              {"type":"perf","section":"Performance Improvements","hidden":false},
+              {"type":"refactor","section":"Code Refactoring","hidden":false},
+              {"type":"style","section":"Coding Conventions","hidden":true},
+              {"type":"build","section":"Build System","hidden":false},
+              {"type":"test","section":"Automated Tests","hidden":false},
+              {"type":"ci","section":"CI/CD Workflows","hidden":false},
+              {"type":"docs","section":"Documentation","hidden":false},
+              {"type":"chore","section":"Miscellaneous","hidden":true}
+            ]
